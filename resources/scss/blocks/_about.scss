@@ -1,0 +1,44 @@
+.about {
+
+    .wrapper {
+        padding-top: 14.4%;
+    }
+
+    &__contents {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, max(366px));
+        column-gap: 26px;
+        row-gap: 7rem;
+        padding-top: 4.4%;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-rows: 22% auto 20%;
+        background: var(--color-grey-100);
+        border-radius: 20px;
+        box-shadow: -4px 0px 4px 0px rgba(0, 0, 0, 0.05);
+        height: 112%;
+        padding: 0% 5% 0% 5%;
+    }
+
+        img {
+            margin-top: 6%;
+            width: 53px;
+            height: 53px;
+        }
+
+    &__name {
+        padding-top: 10%;
+        font-size: map-get(map-get($paragraph_sizes, 'p-small'), 'max');
+        font-weight: 700;
+    }
+    p {
+        font-size: map-get(map-get($paragraph_sizes, 'p-small'), 'max');
+    }
+    span {
+        color: var(--color-span-color);
+    }
+
+
+}

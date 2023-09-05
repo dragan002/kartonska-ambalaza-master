@@ -1,0 +1,66 @@
+.footer {
+    position: relative;
+    margin-top: 13rem;
+    height: 17.4rem;
+    padding: initial;
+    background: var(--color-grey-100);
+    border-top: 1px solid #D2B48C;
+
+    @include breakpoint($to: small) {
+        height: initial;
+     }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 2%;
+
+        @include breakpoint($to: small) {
+            display: initial;
+         }
+    }
+
+    a {
+        display: inline-grid;
+        padding-bottom: 2%;
+    }
+
+    &__right {
+        display: grid;
+        grid-template-rows: 3fr 1fr;
+        align-self: end;
+        justify-self: end;
+
+        @include breakpoint($to: small) {
+            display: initial;
+         }
+    }
+
+    &__social {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: end;
+
+        @include breakpoint($to: small) {
+            display: initial;
+         }
+    }
+    
+    svg {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+
+        @include breakpoint($to: mobile) {
+            width: 80%;
+         }
+    }
+
+    p, a {    
+        font-family: $font_family;
+        font-size: map-get(map-get($paragraph_sizes, 'p-xxxsmall'), 'max');
+        color: var(--color-grey-600);
+    }
+}
+

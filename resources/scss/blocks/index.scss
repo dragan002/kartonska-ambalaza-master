@@ -1,0 +1,28 @@
+ @import 'cards'; 
+ @import '../base/typography';
+ @import '../base/helpers';
+ @import '../abstracts/variables';
+ @import 'header';
+ @import 'hero';
+ @import 'image-text';
+ @import 'image';
+ @import 'products';
+ @import 'works';
+ @import 'contact';
+ @import 'footer';
+ @import 'about';
+
+ @import './category/hero-category';
+ @import './category/works-category';
+ @import './category/contact-category';
+ @import './category/products-category';
+
+ @import './about/hero-about';
+ @import './about/contact-about';
+
+ @import './about/description.scss';
+ @import '../layout/layout';
+ @import '../swiper/swiper-bundle.min';
+ 
+
+

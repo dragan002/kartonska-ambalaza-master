@@ -1,0 +1,98 @@
+.image-text {
+    width: 100%;
+    padding-top: 4.5rem;
+
+    .wrapper {
+        max-width: initial;
+        padding: 0;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        @include breakpoint($to: desktop) {
+            display: initial;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            max-width: 93%;
+            background: var(--color-lines);
+            transform: translateX(-50%);
+            height: 1px;
+            left: 50%;
+            right: -70%;
+            z-index: 2;
+
+            @include breakpoint($to: desktop) {
+                display: none;
+            }
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            max-width: 93%;
+            background: var(--color-lines);
+            transform: translateX(-50%);
+            bottom: 0;
+            height: 1px;
+            left: 50%;
+            right: -70%;
+            z-index: 2;
+       
+            @include breakpoint($to: desktop) {
+                position: relative;
+                margin-top: 4rem;
+                max-width: 91%;
+            }
+        }
+    }
+
+    &__right {
+        max-width: 44.2rem  ;
+        margin: auto;
+
+        @include breakpoint($to: desktop) {
+          margin: initial;
+          padding: 30px 30px 0;
+        }
+    }
+    
+    .timer {
+            
+        svg {
+            height: 7rem;
+            width: 6.6rem;
+            filter: drop-shadow(-4px 0px 4px rgba(0, 0, 0, 0.05));
+
+            @include breakpoint($to: tablet) {
+                width: 6rem;
+                height: 5.6rem;
+            }
+        }
+    }
+
+    .text {
+        font-family: $font_family;
+
+        @include breakpoint($to: desktop) {
+            width: initial;
+            padding-top: 20px;
+        }
+
+        @include breakpoint($to: mobile) {
+            padding-top: 5px;
+        }
+
+        p {
+            color: var(--color-black);
+
+            span {
+                color: var(--color-span-color);
+            }
+        }
+    }
+}

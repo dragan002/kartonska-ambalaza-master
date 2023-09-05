@@ -1,0 +1,122 @@
+.hero-category {
+    display: grid;
+    grid-template-columns: minmax(auto, 165px) minmax(auto, 676px) 1fr;
+    padding-top: 0.5%;
+  
+    @include breakpoint($to: large) {
+      display: initial;
+   }
+  
+    .wrapper {
+      grid-column: 2 / 3;
+      position: relative;
+  
+      &::before {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 137.6%;
+        z-index: 2;
+        background: var(--color-lines);
+        top: 46.4%;
+        height: 1px;
+        right: 37%;
+        transform: rotate(90deg);
+    
+        @include breakpoint($to: extralarge_plus_60) {
+            display: none;
+         }
+      }
+    }
+  
+    &__text {
+      padding-top: 8.4%;
+
+      img {
+        position: absolute;
+        left: 16%;
+        width: 70.7%;
+
+        @include breakpoint($to: extralarge_plus_60) {
+            width: 60.7%;
+         }
+
+         @include breakpoint($to: large_plus_340) {
+            width: 40.7%;
+         }
+
+         @include breakpoint($to: large_plus_200) {         
+            width: 29%;
+            left: 65%;
+            top: 58%;
+         }
+         @include breakpoint($to: large) {         
+            left: 77%;
+            top: 46%;
+            width: 18.7%;
+         }
+
+         @include breakpoint($to: tablet) {         
+            display: none;
+         }
+      }
+    }
+  
+    h1 {
+      padding-top: 3%;
+      margin: 0 0 16px;
+  
+      @include breakpoint($to: large) {
+        padding: initial;
+     }
+    }
+  
+    h2 {
+      max-width: 564px;  
+      line-height: normal;
+      font-family: $font_family_2;
+  
+      @include breakpoint($to: large) {
+        padding-bottom: 2%;
+     }
+    }
+  
+    p, a {
+      font-family: $font_family;
+      color: #000000;
+              
+      span {
+          color: var(--color-grey-700);
+      }
+    } 
+    
+  
+    &__media {
+      grid-column: 5 / -1;
+      position: relative;
+  
+      @include breakpoint($to: extralarge_plus_60) {
+        padding-top: 0.4%;
+     }
+  
+     @include breakpoint($to: large) {
+      padding-bottom: 2%;
+      }
+  
+      &:after {
+        content: "";
+        display: block;
+        position: sticky;
+        height: 1px;
+        max-width: 98%;
+        background: var(--color-lines);
+        transform: translateX(-90%);
+        z-index: 2;
+  
+        @include breakpoint($to: large) {
+          display: none;
+          }
+        }
+      }
+  }
+  

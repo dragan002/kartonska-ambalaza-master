@@ -1,0 +1,135 @@
+/* Breakpoints */
+
+$breakpoints: (
+    small: 440px,
+	mobile: 640px,
+	tablet: 768px,
+	tabletLarge: 860px,
+	desktop: 1024px,
+	desktopLarge: 1150px,
+	desktop1240: 1240px,
+	large: 1340px,
+	large_plus_200: 1540px,
+	large_plus_340: 1680px,
+	extralarge: 1724px,
+	extralarge_plus_60: 1784,
+	extralarge1920: 1920px,
+) !default;
+
+/* Colors */
+$colors: (
+	primary: #56A27C,
+	secondary: #cbeddc,
+	dark: #001923,
+	black: #000,
+	white: #fff,
+	greenBtn: rgba(2, 116, 58, 0.67),
+	green-button-hover: rgba(10, 54, 31, 0.67),
+	lines: #D2B48C,
+	grey-100: #F6F8FA,
+	grey-200: #e9ecef,
+	grey-300: #dee2e6,
+	grey-400: #d6d6d6,
+	grey-500: #adb5bd,
+	grey-600: #A6A6A6,
+	grey-700: #D2B48D,
+	span-color: #56A27C
+);
+
+// take $colors array and create CSS variables from it on the :root and also helper classes
+@each $name, $color in $colors {
+	:root {
+		--color-#{$name}: #{$color};
+	}
+
+	.color-#{'' + $name} {
+		color: $color;
+	}
+
+	.background-#{'' + $name} {
+		background-color: $color;
+	}
+}
+
+
+/* Typography */
+$font_family: 'proxima-nova', Helvetica, Arial, sans-serif;
+$font_family_2:  "freight-text-pro", serif;
+
+$heading_sizes: (
+    'h1': (
+        'min': 35px,
+        'max': 64px,
+    ),
+    'h2': (
+        'min': 33px,
+        'max': 48px, 
+    ),
+    'h3': (
+        'min': 28px,
+        'max': 42px, 
+    ),
+    'h4': (
+        'min': 24px,
+        'max': 32px,
+    ),
+    'h5': (
+        'min': 20px,
+        'max': 28px, 
+    ),
+    'h6': (
+        'min': 18px,
+        'max': 26px, 
+    ),
+	'h6helper': (
+        'min': 12px,
+        'max': 15px, 
+    ),
+) !default;
+
+$paragraph_sizes: (
+    'p': (
+        'min': 14px,
+        'max': 20px,
+    ),
+	'p-xxxsmall': (
+        'min': 12px,
+        'max': 14px,
+),
+    'p-small': (
+        'min': 12px,
+        'max': 16px,
+    ),
+    'p-medium': (
+        'min': 16px,
+        'max': 24px,
+    ),
+    'p-large': (
+        'min': 18px,
+        'max': 28px,
+    ),
+    'p-xlarge': (
+        'min': 22px,
+        'max': 32px,
+    ),
+    'p-xxlarge': (
+        'min': 24px,
+        'max': 36px,
+    ),
+) !default;
+
+/* Spacings */
+$spacing-unit: 8px;
+$spacing-grid: $spacing-unit * 2;
+
+/* For loop that generates z-indexes in 10s */
+@for $i from 1 through 10 {
+	// Modal - 50
+    // Resp Menu - 40
+	// Header - 30
+	// Above content - 20
+	// Content - 10
+	.z-#{$i * 10} {
+		z-index: $i * 10;
+	}
+}

@@ -1,0 +1,54 @@
+.cards {
+  padding-top: 20.5rem;
+
+  @include breakpoint($to: desktop) {
+	padding-top: 9%;
+} 
+
+  @include breakpoint($to: mobile) {
+	padding: 0;
+} 
+
+	.wrapper {
+		display: grid;
+		grid-template-columns: repeat(4,1fr);
+		gap: 24px; 
+		
+		@include breakpoint($to: large) {
+			grid-template-columns: repeat(2,1fr);
+        } 
+
+		@include breakpoint($to: tablet) {
+			grid-template-columns: 1fr;
+        } 
+	}
+
+	&__card {
+		border-radius: 20px;
+		padding: 40px;
+		background: var(--color-grey-100);
+		box-shadow: -4px 0px 4px 0px rgba(0, 0, 0, 0.05);
+		transition: 0.5s;
+		min-height: 30rem;
+    
+		&-inner {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 100%;
+    
+			h3 {
+				font-size: 32px;
+
+				span {
+					color: var(--color-span-color);
+				}
+			}
+
+			p {
+				font-size: 16px;
+				margin: 10px 0;
+			}
+		}
+	}
+}

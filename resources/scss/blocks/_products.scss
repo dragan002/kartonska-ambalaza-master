@@ -1,0 +1,39 @@
+.products {
+    padding-top: 18.8rem;
+
+    @include breakpoint($to: desktop) {
+        padding-top: 9rem;
+     } 
+     
+     @include breakpoint($to: mobile) {
+        padding-top: 5rem;
+     } 
+
+        span {
+            color: var(--color-span-color);
+        }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 26px;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1/1;
+        border-radius: 8px;
+        box-shadow:-4px 0px 4px 0px rgba(0, 0, 0, 0.05); 
+        background: #F5F5DC;
+    }
+    
+    p {
+        padding-top: 8px;
+        
+        @include breakpoint($to: desktop) {
+            text-align: center;
+        }
+    }
+}

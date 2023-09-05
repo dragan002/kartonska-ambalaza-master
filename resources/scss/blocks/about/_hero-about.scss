@@ -1,0 +1,89 @@
+.hero-about {
+  display: grid;
+  grid-template-columns: minmax(auto, 165px) minmax(auto, 560px) 1fr;
+  padding-top: 0.5%;
+
+  @include breakpoint($to: large) {
+    display: initial;
+ }
+
+  .wrapper {
+    grid-column: 2 / 3;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 167%;
+      z-index: 2;
+      background: var(--color-lines);
+      top: 46.4%;
+      height: 1px;
+      right: 25%;
+      transform: rotate(90deg);
+  
+      @include breakpoint($to: extralarge_plus_60) {
+          display: none;
+       }
+    }
+  }
+
+  &__text {
+    padding-top: 8.4%;
+  }
+
+  h1 {
+    padding-top: 13%;
+
+    @include breakpoint($to: large) {
+      padding: initial;
+   }
+  }
+
+  h2 {
+    line-height: normal;
+    font-family: $font_family_2;
+
+    @include breakpoint($to: large) {
+      padding-bottom: 2%;
+   }
+  }
+
+  p, a{
+    font-family: $font_family;
+    color: #000000;
+            
+    span {
+        color: var(--color-grey-700);
+    }
+  }
+
+  &__media {
+    grid-column: 5 / -1;
+    position: relative;
+
+    @include breakpoint($to: extralarge_plus_60) {
+      padding-top: 0.4%;
+   }
+
+   @include breakpoint($to: large) {
+      padding-bottom: 2%;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: sticky;
+      height: 1px;
+      max-width: 98%;
+      background: var(--color-lines);
+      transform: translateX(-90%);
+      z-index: 2;
+
+      @include breakpoint($to: large) {
+        display: none;
+        }
+      }
+    }
+}

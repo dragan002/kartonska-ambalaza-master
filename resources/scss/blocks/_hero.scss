@@ -1,0 +1,117 @@
+.hero {
+    padding-top: 6.6%;
+
+    @include breakpoint($to: tabletLarge) {
+        padding: 0;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 70rem;
+        position: relative;
+    
+
+        @include breakpoint($to: tablet) {
+            flex-direction: column;
+            margin: 0;
+            text-align: center;
+            min-height: initial;
+        }
+        @include breakpoint($to: tabletLarge) {
+            padding-top: 30px;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 58%;
+            z-index: 2;
+            background: var(--color-lines);
+            top: 277px;
+            height: 1px;
+            left: -498px;
+            transform: rotate(90deg);
+
+            @include breakpoint($to: extralarge_plus_60) {
+                display: none;
+             }
+          }
+    }
+
+    &__text {
+        width: 53%;
+
+        @include breakpoint($to: desktop) {
+           width: initial;
+         }
+
+        @include breakpoint($to: tablet) {
+            text-align: left;
+        }
+
+        h2 {
+          max-width: 564px;
+          line-height: normal;
+          font-family: $font_family_2;
+        }
+    }
+
+    &__media {
+        position: absolute;
+        right: -5%;
+        left: 26%;
+        top: 39%;
+        transform: translateY(-50%);
+        z-index: -1;
+
+        @include breakpoint($to: extralarge) {
+            width: 65%;
+            top: 53%;
+            left: 33%;
+         }
+
+         @include breakpoint($to: large) {
+            top: 50%;
+         }
+
+         @include breakpoint($to: desktop) {
+            transform: translateX(0%);
+            left: 34%;
+            top: 36%;
+         }
+
+         @include breakpoint($to: tabletLarge) {
+            left: 19%;
+            transform: translateX(0%);
+         }
+
+         @include breakpoint($to: tablet) {
+            position: relative;
+        
+         }
+        img {
+          max-width: 1400px;
+        }
+    }
+
+    &__partners {
+
+        h5 {
+            line-height: 24px;
+            color: #2F2F2F;
+        }
+    }
+
+    &__logos {
+        display: flex;
+        gap: 1.9rem;
+
+        @include breakpoint($to: tablet) {
+            justify-content: space-around;
+         }
+    }
+}

@@ -1,0 +1,55 @@
+.image {
+    position: relative;
+    padding-top: 10.7%;
+
+    @include breakpoint($to: desktop) {
+      padding-top: 100px;
+   } 
+
+   @include breakpoint($to: mobile) {
+      padding-top: 50px;
+   } 
+    .wrapper {
+        max-width: initial;
+        padding: initial; 
+    }
+
+    .header__log {
+        max-width: 200px;
+        position: absolute;
+        top: 90%;
+        left: 66px;
+
+        @include breakpoint($to: large_plus_340) {
+            top: 88%;
+         }
+
+        @include breakpoint($to: large) {
+            top: 86%;
+         }
+
+         @include breakpoint($to: desktop) {
+            left: 30px;
+            top: 84%;
+         }
+
+         @include breakpoint($to: tablet) {
+            max-width: 160px;
+            top: 84%;
+            left: 20px;
+         }
+
+         @include breakpoint($to: mobile) {
+            max-width: 140px;
+            top: 82%;
+            left: 10px;
+         }
+
+         @include breakpoint($to: small) {
+            max-width: 90px;
+            top: 80%;
+            left: 10px;
+         }
+    }
+   
+}

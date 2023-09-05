@@ -1,0 +1,7 @@
+.works-category {
+    padding-top: 3.2%;
+
+    @include breakpoint($to: large) {
+       padding-top: 6%;
+     }
+}
